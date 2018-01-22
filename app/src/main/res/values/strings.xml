@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BadmintonScoreCounter</string>
+    <string name="team_a">team a</string>
+    <string name="team_b">team b</string>
+    <string name="original_score">0</string>
+    <string name="add_one_point">score</string>
+    <string name="game_one">game 1</string>
+    <string name="game_two">game 2</string>
+    <string name="game_three">game 3</string>
+    <string name="reset_game">reset</string>
+</resources>
