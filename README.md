@@ -1,16 +1,30 @@
 # Badminton Score Counter
-* A single-screen app that counts badminton scores,
+
+> A single-screen app that counts badminton scores.
+
 [![Image1](gif/counter1.gif)](Image1)
-[![Image2](gif/counter2.gif)](Image2)
-[![Image3](gif/counter3.gif)](Image3)
+
+> A saver reset button is necessary.
+
 [![Image4](gif/counter4.gif)](Image4)
 
 ## First thing first - Rules of Badminton
 > A match consists of the best of 3 games of 21 points.
+
 > Every time there is a serve – there is a point scored.
+
 > The side winning a rally adds a point to its score.
+
 > At 20 all, the side which gains a 2 point lead first, wins that game.
+
+> If both team are in 20 points. there will be a longer game.
+
+[![Image2](gif/counter2.gif)](Image2)
+
 > At 29 all, the side scoring the 30th point, wins that game.
+
+[![Image3](gif/counter3.gif)](Image3)
+
 > The side winning a game serves first in the next game.
 
 ## Getting Started
