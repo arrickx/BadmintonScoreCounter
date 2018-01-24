@@ -23,10 +23,38 @@ public class MainActivity extends AppCompatActivity {
     int gameB = 0;
     int resetCounter = 0;
 
+    /**
+     * It creates global variable for the views that need to be used.
+     */
+    TextView scoreForTeamA;
+    TextView scoreForTeamB;
+    TextView gameOneTeamA;
+    TextView gameOneTeamB;
+    TextView gameTwoTeamA;
+    TextView gameTwoTeamB;
+    TextView gameThreeTeamA;
+    TextView gameThreeTeamB;
+    TextView winnerTeam;
+    RelativeLayout winnerMessage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /**
+         * This initialize all the views that was created above.
+         */
+        scoreForTeamA = findViewById(R.id.team_a_score);
+        scoreForTeamB = findViewById(R.id.team_b_score);
+        gameOneTeamA = findViewById(R.id.game1_a);
+        gameOneTeamB = findViewById(R.id.game1_b);
+        gameTwoTeamA = findViewById(R.id.game2_a);
+        gameTwoTeamB = findViewById(R.id.game2_b);
+        gameThreeTeamA = findViewById(R.id.game3_a);
+        gameThreeTeamB = findViewById(R.id.game3_b);
+        winnerTeam = findViewById(R.id.winner_team);
+        winnerMessage = findViewById(R.id.winner_message);
 
     }
 
@@ -34,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
      * This function displays score of current game.
      */
     public void displayScore() {
-        TextView scoreForTeamA = findViewById(R.id.team_a_score);
-        TextView scoreForTeamB = findViewById(R.id.team_b_score);
         scoreForTeamA.setText(String.valueOf(scoreA));
         scoreForTeamB.setText(String.valueOf(scoreB));
     }
@@ -60,12 +86,6 @@ public class MainActivity extends AppCompatActivity {
      * This function updates the game table if any of the team win the current game.
      */
     public void updateTable() {
-        TextView gameOneTeamA = findViewById(R.id.game1_a);
-        TextView gameOneTeamB = findViewById(R.id.game1_b);
-        TextView gameTwoTeamA = findViewById(R.id.game2_a);
-        TextView gameTwoTeamB = findViewById(R.id.game2_b);
-        TextView gameThreeTeamA = findViewById(R.id.game3_a);
-        TextView gameThreeTeamB = findViewById(R.id.game3_b);
         if (gameA > 0 && gameB > 0) {
             gameThreeTeamA.setText(String.valueOf(scoreA));
             gameThreeTeamB.setText(String.valueOf(scoreB));
@@ -84,14 +104,13 @@ public class MainActivity extends AppCompatActivity {
      * This function will shows the winner message if any of the team won the match.
      */
     public void winnerMessage() {
-        TextView winnerTeam = findViewById(R.id.winner_team);
         if (gameA > 1) {
             winnerTeam.setText(R.string.team_a);
-            findViewById(R.id.winner_message).setVisibility(View.VISIBLE);
+            winnerMessage.setVisibility(View.VISIBLE);
         }
         if (gameB > 1) {
             winnerTeam.setText(R.string.team_b);
-            findViewById(R.id.winner_message).setVisibility(View.VISIBLE);
+            winnerMessage.setVisibility(View.VISIBLE);
         }
     }
 
@@ -126,12 +145,6 @@ public class MainActivity extends AppCompatActivity {
     public void resetScore(View view) {
         resetCounter += 1;
         if (resetCounter > 1) {
-            TextView gameOneTeamA = findViewById(R.id.game1_a);
-            TextView gameOneTeamB = findViewById(R.id.game1_b);
-            TextView gameTwoTeamA = findViewById(R.id.game2_a);
-            TextView gameTwoTeamB = findViewById(R.id.game2_b);
-            TextView gameThreeTeamA = findViewById(R.id.game3_a);
-            TextView gameThreeTeamB = findViewById(R.id.game3_b);
             scoreA = 0;
             scoreB = 0;
             gameA = 0;
@@ -143,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             gameTwoTeamB.setText(String.valueOf(scoreB));
             gameOneTeamA.setText(String.valueOf(scoreA));
             gameOneTeamB.setText(String.valueOf(scoreB));
-            findViewById(R.id.winner_message).setVisibility(View.INVISIBLE);
+            winnerMessage.setVisibility(View.INVISIBLE);
             resetCounter = 0;
         } else {
             //Let the user to confirm for the reset
